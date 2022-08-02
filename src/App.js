@@ -1,18 +1,18 @@
 import './App.css'
 import Homepage from './Components/Pages/Homepage'
-import {Route, Switch, BrowserRouter} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import About from './Components/Pages/About'
+import Contact from './Components/Pages/Contact'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path='/'>
-          <Homepage/>
-        </Route>
-        <Route> </Route>
-        <Route></Route>
-      </Switch>
-    </BrowserRouter>
+    <Router>
+      <Routes>
+        <Route exact path='/' element={<Homepage/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<Contact/>}/>
+      </Routes>
+    </Router>
   );
 }
 
